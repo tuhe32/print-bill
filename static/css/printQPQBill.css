@@ -1,0 +1,110 @@
+@media screen {
+
+  /*弹窗效果*/
+  .dialog_printQPQBill .el-dialog{
+        width: 800px;
+        background: #f6f3ed;
+        border-radius: 5px;
+        margin-bottom: 30px;
+     }
+   .dialog_printQPQBill  .el-dialog__header{
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        font-size: 16px;
+        padding: 0;
+        background:#ae6a20;
+    }
+    .dialog_printQPQBill  .el-dialog__title{
+      	color: #f5db87;  
+    }
+   .dialog_printQPQBill .el-dialog__headerbtn{
+        display: none;
+    }
+    .dialog_printQPQBill .el-dialog__body{
+        margin: 0;
+        padding: 0;
+    }
+    .dialog_printQPQBill .dialog_con{
+        padding:0 20px;
+    }
+    .dialog_printQPQBill .dialog_btn{
+        text-align: center;
+        padding:20px 0;
+    }
+    .dialog_printQPQBill .el-button{
+        width: 120px;
+        padding: 14px 10px;
+        font-size: 16px;
+    }
+ 
+	/*基本信息*/
+  .printQPQBill_area{width:718px; margin: 20px auto; position:relative;}
+  .printQPQBill_area .con{width:100%; height: 100%; position: absolute;}
+  .printQPQBill_area .bgimg{width: 100%;}
+  .printQPQBill_area input{height: 20px; line-height: 20px; margin: 0; font-size: 15px; text-align: left; padding: 0; background: none; border:0; }
+  .printQPQBill_area textarea{background: none; border:0; text-align: left;  font-size: 15px;}
+  .printQPQBill_area .con li{width: 100%; height: auto; overflow: hidden;}
+  
+  .printBill_box{width:718px; position:relative;}
+  .printBill_box .con{width:100%; height: 100%; position: absolute;}
+  .printBill_box .bgimg{width: 100%;}
+  .printBill_box p{height: auto; overflow: hidden; clear: both; font-size: 15px; text-align: left; margin: 0;  padding: 0;}
+  .printBill_box p span{float: left; display: inline-block; height: 22px; display: inline-block; }
+  .printBill_box .p1{margin-top:106px}
+  .printBill_box .p1_a1{margin:0 0 0 70px; text-align: center; width:60px;}
+  .printBill_box .p1_a2{margin:0 0 0 21px; text-align: center; width:40px;}
+  .printBill_box .p1_a3{margin:0 0 0 20px; text-align: center; width:40px;}
+  .printBill_box .p2{margin-top:20px}
+  .printBill_box .p2_a1{margin:0 0 0 185px; width:420px;}
+  .printBill_box .p3{margin-top:33px}
+  .printBill_box .p3_a1{margin:0px 0 0 185px; width:420px; height: 110px; overflow: hidden;}
+  .printBill_box .p4{margin-top:20px}
+  .printBill_box .p4_a1{margin:0 0 0 185px; width:150px;}
+  .printBill_box .p4_a2{margin:0 0 0 50px; width:85px;}
+  .printBill_box .p4_a3{margin:0 0 0 35px; width:110px;}
+  .printBill_box .p5{margin-top:13px}
+  .printBill_box .p5_a1{margin:0 0 0 185px; width:420px;}
+  .printBill_box .p6{margin-top:11px}
+  .printBill_box .p6_a1{margin:0 0 0 250px; width:250px; }
+  .printBill_box .p6_a2{margin:0 0 0 0px; width:100px;}
+  .printBill_box .p7{margin-top:12px}
+  .printBill_box .p7_a1{margin:0px 0 0 490px; width:120px;}
+  
+  
+  
+}
+
+@media print {
+  ul,li,dl,dt,dd,div{margin: 0; padding: 0; list-style:none;}
+  html,body{margin: 0; padding: 0; }
+  input,textarea{margin: 0; padding: 0; border:0; background: none; font-family:"宋体"; text-align: left;  font-size: 15px;}
+  
+  /*佛事单*/
+  .printBill_box{width:718px; height:480px; overflow: hidden; position:relative;}
+  .printBill_box .con{width:100%; height: 100%; position: absolute;}
+  .printBill_box .bgimg{width: 100%; display: none;}
+  .printBill_box p{height: auto; overflow: hidden; clear: both; font-size: 15px; text-align: left; margin: 0;  padding: 0; font-family:"宋体";}
+  .printBill_box p span{float: left; display: inline-block; height: 22px; display: inline-block; }
+  .printBill_box .p1{margin-top:106px}
+  .printBill_box .p1_a1{margin:0 0 0 70px; text-align: center; width:60px;}
+  .printBill_box .p1_a2{margin:0 0 0 21px; text-align: center; width:40px;}
+  .printBill_box .p1_a3{margin:0 0 0 20px; text-align: center; width:40px;}
+  .printBill_box .p2{margin-top:20px}
+  .printBill_box .p2_a1{margin:0 0 0 185px; width:420px;}
+  .printBill_box .p3{margin-top:33px}
+  .printBill_box .p3_a1{margin:0px 0 0 185px; width:420px; height: 110px; overflow: hidden;}
+  .printBill_box .p4{margin-top:25px}
+  .printBill_box .p4_a1{margin:0 0 0 185px; width:150px;}
+  .printBill_box .p4_a2{margin:0 0 0 50px; width:85px;}
+  .printBill_box .p4_a3{margin:0 0 0 35px; width:110px;}
+  .printBill_box .p5{margin-top:13px}
+  .printBill_box .p5_a1{margin:0 0 0 185px; width:420px;}
+  .printBill_box .p6{margin-top:11px}
+  .printBill_box .p6_a1{margin:0 0 0 250px; width:250px;}
+  .printBill_box .p6_a2{margin:0 0 0 0px; width:100px;}
+  .printBill_box .p7{margin-top:12px}
+  .printBill_box .p7_a1{margin:0px 0 0 490px; width:120px;}
+ 
+
+}

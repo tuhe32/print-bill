@@ -7,9 +7,11 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'landing-page',
-      component: require('@/components/LandingPage').default
+      name: 'home',
+      component: require('@/page/home').default
     },
+    //青浦区发票收据
+    {path: '/printQPQBill', component:  require('@/page/printQPQBill/printQPQBill').default,name: 'printQPQBill',},
     {
       path: '*',
       redirect: '/'
