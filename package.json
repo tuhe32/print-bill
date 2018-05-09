@@ -1,7 +1,7 @@
 {
   "name": "bill-print",
-  "version": "0.0.0",
-  "author": "tuhe32 <tuhe32@163.com>",
+  "version": "1.0.0",
+  "author": "远境出品",
   "description": "An electron-vue project",
   "license": null,
   "main": "./dist/electron/main.js",
