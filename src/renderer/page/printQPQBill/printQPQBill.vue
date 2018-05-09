@@ -24,14 +24,14 @@
 	           	<span class="p1_a3">{{bill.day}}</span>
 	           </p>
 	           <p class="p2">
-	           	<span class="p2_a1">{{bill.name}}</span>
+	           	<span class="p2_a1">{{bill.payer}}</span>
 	           </p>
 	           <p class="p3">
-	           	 <span class="p3_a1">{{bill.info}}</span>
+	           	 <span class="p3_a1">{{bill.information}}</span>
 	           </p>
 	           <p class="p4">
-	           		<span class="p4_a1">{{bill.buddhist}}</span>
-	           		<span class="p4_a2">{{bill.paiweiCode}}</span>
+	           		<span class="p4_a1">{{bill.fahui}}</span>
+	           		<span class="p4_a2">{{bill.paiweiNumber}}</span>
 	           		<span class="p4_a3">{{bill.phone}}</span>
 	           </p>
 	           <p class="p5">
@@ -42,7 +42,7 @@
 	           		<span class="p6_a2">{{bill.money}}</span>
 	           </p>
 	           <p class="p7">
-	           	<span class="p7_a1">{{bill.handleMan}}</span>
+	           	<span class="p7_a1">{{bill.payee}}</span>
 	           </p>
 	        </div>
 	        <img class="bgimg" src="~@/assets/tgcssj.jpg"/>

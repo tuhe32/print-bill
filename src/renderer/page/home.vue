@@ -202,7 +202,7 @@
                 if(this.baseWebUrl != null && this.baseWebUrl != undefined && this.baseWebUrl.trim() != '') {
                     commonStr += "/index.html";
                 }
-                window.open(this.baseWebUrl+commonStr+""+"?bill="+JSON.stringify(bill)+"#/printQPQBill");
+                window.open(this.baseWebUrl+commonStr+""+"?bill="+JSON.stringify(bill)+"#/printQPQBill","打印窗口","width="+1000+",height="+663);
             },
         }
     }
