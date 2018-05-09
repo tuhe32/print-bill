@@ -1,6 +1,9 @@
 @media screen {
-
+    .clearfix{clear: both;}
   /*弹窗效果*/
+    .dialog_printQPQBill{
+
+    }
   .dialog_printQPQBill .el-dialog{
         width: 800px;
         background: #f6f3ed;

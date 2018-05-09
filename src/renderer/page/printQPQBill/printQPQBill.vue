@@ -112,7 +112,6 @@
     created() {
       let billUrl = this.getUrlParam("bill");
       let bill = JSON.parse(billUrl)
-      console.log(666,bill)
       if(bill != null && bill != undefined )  {
         if(this.baseUtil.isNotBlank(bill.money)) {
           bill.bigMoney = this.fmUtil.smalltoBIG(bill.money);
