@@ -32,7 +32,7 @@ install:
 script:
 - yarn run build
 after_script:
-  - cd ./dist
+  - cd ./build
   - git init
   - git config user.name "tuhe32"
   - git config user.email "tuhe32@163.com"
