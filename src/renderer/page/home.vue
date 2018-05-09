@@ -14,7 +14,8 @@
                         @keyup.native.enter="byKeyQuery"
                         :on-icon-click="byKeyQuery">
                 </el-input>
-                <el-date-picker v-model="params.periods" style="float: right;width:150px; margin-right: 10px;" type="date" placeholder="选择日期"
+                <el-date-picker v-model="params.periods" style="float: right;width:250px; margin-right: 10px;" type="daterange"range-separator="至"
+                                start-placeholder="开始日期" end-placeholder="结束日期"
                                 @change="onDateChange" format="yyyy.MM.dd"></el-date-picker>
                 <el-button type="primary" style="width:120px;float: right;margin-right: 10px;" v-if="!isNewBill" @click="showNewBill" >返回录入票据</el-button>
         </div>
@@ -136,20 +137,32 @@
             loadData () {
                 this.clearBillData();
                 this.listLoading = true;
-                let paramKey = this.baseUtil.modelCopy(this.params.key);
-                let searchParam = {}
-                let key = "";
-                if(this.baseUtil.isNotBlank(paramKey)) {
-                    key = eval("/"+paramKey+"/");
-                    searchParam = { $or : [{information: key},{fahui:key},{paiweiNumber:key},{phone:key},{address:key},{payee:key}]  }
+                let searchParam = {},arrParam = {},dateQuery = {};
+                let arrKey = [];
+                let dateKey = this.baseUtil.modelCopy(this.params.periods);
+                if(this.baseUtil.isNotBlankObj(dateKey)) {
+                    dateQuery = {invoiceDate:{$gte: new Date(dateKey[0]),$lte:new Date(dateKey[1])}}
                 }
-                // let key = eval("/"+paramKey+"/");
+                let paramKey = this.baseUtil.modelCopy(this.params.key);
+                if(this.baseUtil.isNotBlank(paramKey)) {
+                    let key = eval("/"+paramKey+"/");
+                    arrKey.push({information: key})
+                    arrKey.push({fahui:key})
+                    arrKey.push({paiweiNumber:key})
+                    arrKey.push({phone:key})
+                    arrKey.push({address:key})
+                    arrKey.push({payee:key})
+                    arrParam = { $or : arrKey  }
+                }
+                if(JSON.stringify(dateQuery) != "{}" || JSON.stringify(arrParam) != "{}") {
+                    searchParam = {$and :[dateQuery,arrParam]}
+                }
                 let page = parseInt(this.params.page.page);
                 let pageSize = parseInt(this.params.page.pageSize)
                 let startPages =( page - 1 )* pageSize
                 let that = this;
-                this.$db.find(searchParam,function (err, bills) {
-                    if(that.baseUtil.isNotBlankObj(bills) && bills.length > 0) that.resp.total = bills.length;
+                this.$db.count(searchParam,function (err, count) {
+                    that.resp.total = count;
                 })
                 this.$db.find(searchParam).sort({"createAt":-1})
                     .skip(startPages).limit(pageSize)
@@ -158,6 +171,7 @@
                         that.isNewBill = false;
                         that.resp.listData = bills;
                     }else {
+                        that.resp.listData = [];
                         that.$message({showClose: true,message: '没有查询到任何数据',type: 'error'});
                     }
                     that.listLoading = false;

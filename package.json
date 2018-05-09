@@ -1,5 +1,5 @@
 {
-  "name": "bill-print",
+  "name": "收据打印-远境出品",
   "version": "0.0.0",
   "author": "tuhe32 <tuhe32@163.com>",
   "description": "An electron-vue project",
@@ -17,7 +17,7 @@
     "postinstall": ""
   },
   "build": {
-    "productName": "bill-print",
+    "productName": "收据打印-远境出品",
     "appId": "org.simulatedgreg.electron-vue",
     "directories": {
       "output": "build"
