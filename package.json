@@ -1,5 +1,5 @@
 {
-  "name": "收据打印-远境出品",
+  "name": "bill-print",
   "version": "0.0.0",
   "author": "tuhe32 <tuhe32@163.com>",
   "description": "An electron-vue project",

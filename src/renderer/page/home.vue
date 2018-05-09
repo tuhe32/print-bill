@@ -85,7 +85,7 @@
                 </div>
             </div>
             <div class="dialog_btn">
-                <el-button :plain="true" type="info" @click="isShowBill = false">取 消</el-button>
+                <el-button :plain="true" type="info" @click="clearBillData">取 消</el-button>
                 <el-button type="success" @click="saveInvoiceAndPrint">保存并打印</el-button>
             </div>
         </div>
