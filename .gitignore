@@ -1,7 +1,6 @@
 .DS_Store
 dist/
 .idea
-.electron-vue
 build/*
 !build/icons
 node_modules/
