@@ -13,7 +13,7 @@
   <section>
     <el-col :span="24" class="contentBox printBatch_preview" v-loading="loading">
       <div class="button_action">
-        <el-button type="darkBrown" @click="printBatchClick" style="float: right;">打印</el-button>
+        <el-button type="danger" round @click="printBatchClick" style="float: right;">打印</el-button>
       </div>
       <ul id="print_batch">
         <li class="printBill_box" >
