@@ -45,4 +45,4 @@ branches:
   - master
 env:
    global:
-     - GH_REF: https://github.com/tuhe32/print-bill.git
+     - GH_REF: git@github.com:tuhe32/print-bill.git
