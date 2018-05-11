@@ -6,18 +6,18 @@
         <!--<el-button   @click="showBill" >打印发票</el-button>-->
         <div class="breadcrumb-container">
             <div class="title" style="float: left; color: #4b2f20; font-weight: bold; font-size:20px; margin:8px 0 0 20px;">收据打印</div>
-                <el-input
-                        style="width:180px;float: right;"
-                        placeholder="收据信息"
-                        icon="search"
-                        v-model="params.key"
-                        @keyup.native.enter="byKeyQuery"
-                        :on-icon-click="byKeyQuery">
-                </el-input>
-                <el-date-picker v-model="params.periods" style="float: right;width:250px; margin-right: 10px;" type="daterange"range-separator="至"
-                                start-placeholder="开始日期" end-placeholder="结束日期"
-                                @change="onDateChange" format="yyyy.MM.dd"></el-date-picker>
-                <el-button type="primary" style="width:120px;float: right;margin-right: 10px;" v-if="!isNewBill" @click="showNewBill" >返回录入票据</el-button>
+            <el-input
+                    style="width:180px;float: right;"
+                    placeholder="收据信息"
+                    icon="search"
+                    v-model="params.key"
+                    @keyup.native.enter="byKeyQuery"
+                    :on-icon-click="byKeyQuery">
+            </el-input>
+            <el-date-picker v-model="params.periods" style="float: right;width:250px; margin-right: 10px;" type="daterange"range-separator="至"
+                            start-placeholder="开始日期" end-placeholder="结束日期"
+                            @change="onDateChange" format="yyyy.MM.dd"></el-date-picker>
+            <el-button type="primary" style="width:120px;float: right;margin-right: 10px;" v-if="!isNewBill" @click="showNewBill" >返回录入票据</el-button>
         </div>
 
         <!--列表-->
@@ -146,11 +146,13 @@
                 let paramKey = this.baseUtil.modelCopy(this.params.key);
                 if(this.baseUtil.isNotBlank(paramKey)) {
                     let key = eval("/"+paramKey+"/");
+                    arrKey.push({payer: key})
                     arrKey.push({information: key})
                     arrKey.push({fahui:key})
                     arrKey.push({paiweiNumber:key})
                     arrKey.push({phone:key})
                     arrKey.push({address:key})
+                    arrKey.push({money:key})
                     arrKey.push({payee:key})
                     arrParam = { $or : arrKey  }
                 }
@@ -167,15 +169,15 @@
                 this.$db.find(searchParam).sort({"createAt":-1})
                     .skip(startPages).limit(pageSize)
                     .exec(function (err, bills) {
-                    if(that.baseUtil.isNotBlankObj(bills) && bills.length > 0) {
-                        that.isNewBill = false;
-                        that.resp.listData = bills;
-                    }else {
-                        that.resp.listData = [];
-                        that.$message({showClose: true,message: '没有查询到任何数据',type: 'error'});
-                    }
-                    that.listLoading = false;
-                });
+                        if(that.baseUtil.isNotBlankObj(bills) && bills.length > 0) {
+                            that.isNewBill = false;
+                            that.resp.listData = bills;
+                        }else {
+                            that.resp.listData = [];
+                            that.$message({showClose: true,message: '没有查询到任何数据',type: 'error'});
+                        }
+                        that.listLoading = false;
+                    });
             },
             handleSizeChange(val){
                 this.params.page.pageSize = val;
