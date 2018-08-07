@@ -1,0 +1,10 @@
+version: 1.0.0
+files:
+  - url: bill-print-1.0.0-mac.zip
+    sha512: VuGKUYhyJVmhvVmevXoD25ofTUCEqXNFxpcM7vrMMjWB+PNlrY3MIpfWcRiypbzuZM0C2vx80MS6l7IE/8dt4A==
+  - url: bill-print-1.0.0.dmg
+    sha512: CK3cnmkXIQI1UZLB624yyzYnMfTKxlauH1FH/nFAiHyXBSTjlwnbgaC4ZZrKJMydKdqLDVBzqRz4nknN6LEK6w==
+    size: 50981216
+path: bill-print-1.0.0-mac.zip
+sha512: VuGKUYhyJVmhvVmevXoD25ofTUCEqXNFxpcM7vrMMjWB+PNlrY3MIpfWcRiypbzuZM0C2vx80MS6l7IE/8dt4A==
+releaseDate: '2018-08-07T07:00:13.541Z'
